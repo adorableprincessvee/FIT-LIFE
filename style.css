@@ -16,6 +16,11 @@
         cursor: pointer;
       }
 
+    ::selection{
+      background-color: red;
+      color: white;
+    }
+
       /* Reset */
       * {
         padding: 0;
