@@ -1,112 +1,119 @@
- // Navigation Active Link Highlighting
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
+// ============ FitLife Modern JS ============
 
-      window.addEventListener("scroll", () => {
-        let current = "";
+// Mobile nav toggle
+const toggle = document.getElementById('toggle');
+const nav = document.getElementById('nav');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  nav.classList.toggle('open');
+});
+document.querySelectorAll('.nav-link').forEach(a =>
+  a.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    nav.classList.remove('open');
+  })
+);
 
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 80;
-          if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
+// Header scroll + scroll progress + back-to-top
+const header = document.getElementById('header');
+const progress = document.getElementById('scrollProgress');
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progress.style.width = scrolled + '%';
+  header.classList.toggle('scrolled', h.scrollTop > 30);
+  toTop.classList.toggle('show', h.scrollTop > 400);
+});
 
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-          }
-        });
-
-        // Scroll Progress Bar
-        const scrollProgress = document.querySelector(".scroll-progress");
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (window.pageYOffset / scrollHeight) * 100;
-        scrollProgress.style.width = scrolled + "%";
-
-        // Show/Hide Floating Button
-        const floatingBtn = document.querySelector(".floating-btn");
-        if (window.pageYOffset > 300) {
-          floatingBtn.classList.add("show");
-        } else {
-          floatingBtn.classList.remove("show");
-        }
-      });
-
-      // Typing Animation
-      const texts = [
-        "Physical Fitness,",
-        "Weight Gain,",
-        "Strength Training,",
-        "Fat Loss,",
-        "Weightlifting,",
-        "Running.",
-      ];
-
-      let count = 0;
-      let index = 0;
-      let currentText = "";
-      let letter = "";
-      let isDeleting = false;
-
-      function type() {
-        if (count === texts.length) {
-          count = 0;
-        }
-
-        currentText = texts[count];
-
-        if (isDeleting) {
-          letter = currentText.substring(0, index--);
-        } else {
-          letter = currentText.substring(0, index++);
-        }
-
-        document.getElementById("typing").textContent = letter;
-
-        if (!isDeleting && index === currentText.length) {
-          isDeleting = true;
-          setTimeout(type, 1500);
-          return;
-        } else if (isDeleting && index === 0) {
-          isDeleting = false;
-          count++;
-        }
-
-        const speed = isDeleting ? 60 : 100;
-        setTimeout(type, speed);
+// Active nav highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const spy = new IntersectionObserver(
+  entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
       }
+    });
+  },
+  { rootMargin: '-45% 0px -50% 0px' }
+);
+sections.forEach(s => spy.observe(s));
 
-      type();
-
-      // Toggle Mobile Menu
-      function toggleMenu() {
-        const menuToggle = document.querySelector(".toggle");
-        const navigator = document.querySelector(".navigator");
-        menuToggle.classList.toggle("active");
-        navigator.classList.toggle("active");
+// Reveal on scroll
+const revealObs = new IntersectionObserver(
+  entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
       }
+    });
+  },
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-      // Close menu when clicking on a nav link (mobile)
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          const menuToggle = document.querySelector(".toggle");
-          const navigator = document.querySelector(".navigator");
-          if (navigator.classList.contains("active")) {
-            menuToggle.classList.remove("active");
-            navigator.classList.remove("active");
-          }
-        });
-      });
+// Typing effect
+const typingEl = document.getElementById('typing');
+const phrases = ['Train Hard.', 'Stay Strong.', 'Live Fit.', 'Push Limits.'];
+let pi = 0, ci = 0, deleting = false;
+function type() {
+  const current = phrases[pi];
+  typingEl.textContent = current.slice(0, ci);
+  if (!deleting && ci < current.length) {
+    ci++; setTimeout(type, 90);
+  } else if (deleting && ci > 0) {
+    ci--; setTimeout(type, 45);
+  } else {
+    deleting = !deleting;
+    if (!deleting) pi = (pi + 1) % phrases.length;
+    setTimeout(type, deleting ? 1400 : 300);
+  }
+}
+type();
 
-      // Scroll to Top Function
-      function scrollToTop() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
+// Animated counters
+const counters = document.querySelectorAll('[data-count]');
+const counterObs = new IntersectionObserver(
+  entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = +el.dataset.count;
+      const dur = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.floor(p * target).toLocaleString() + (p === 1 ? '+' : '');
+        if (p < 1) requestAnimationFrame(tick);
       }
+      requestAnimationFrame(tick);
+      counterObs.unobserve(el);
+    });
+  },
+  { threshold: 0.5 }
+);
+counters.forEach(c => counterObs.observe(c));
 
-      // Prevent horizontal scroll
-      document.body.style.overflowX = "hidden";
+// Contact form
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMsg');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const data = new FormData(form);
+  if (!data.get('name') || !data.get('email')) {
+    msg.style.color = '#ff6a6a';
+    msg.textContent = 'Please fill in your name and email.';
+    return;
+  }
+  msg.style.color = '#7CFC00';
+  msg.textContent = `Thanks ${data.get('name')}! We'll be in touch shortly. 💪`;
+  form.reset();
+  setTimeout(() => (msg.textContent = ''), 5000);
+});
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();

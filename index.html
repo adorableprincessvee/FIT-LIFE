@@ -1,322 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife Gym | Build Your Dream Physique</title>
+  <meta name="description" content="FitLife Gym — modern training, expert coaches, and a community to help you build your dream physique." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/facebook?f=brands&s=solid"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/google?f=brands&s=solid"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/instagram?f=brands&s=solid"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/xmark?f=classic&s=solid"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fontawesome.com/icons/youtube?f=brands&s=solid"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>FitLife Gym | Build Your Dream Physique</title>
-  </head>
-  <body>
-    
-    <!-- Navigation -->
-    <div class="header">
-      <div class="logo">
-        <h1>FIT<span>LIFE</span></h1>
-      </div>
-      <div class="toggle" onclick="toggleMenu()">
-        <div class="hamburger-lines">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <nav class="navigator">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#classes">Classes</a>
-        <a href="#trainers">Trainers</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="headerbutton">Join Us</button>
-    </div>
-
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
-
-    <!-- Sections -->
-    <section id="home">
-      <div class="hero">
-        <h1>BUILD Your Dream Physique</h1>
-        <div class="test">
-          <h2 id="typing"></h2>
-          <span class="cursor">|</span>
-        </div>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam vel,
-          eveniet soluta dolores praesentium sit quod neque dolorum?
-        </p>
-        <button class="discount-btn">Join Us</button>
-      </div>
-      <div class="heroimg">
-        <img src="./images/hero-img.png" alt="image" />
-      </div>
-    </section>
-    <section id="about">
-      <div class="about-us">
-        <div class="about-img">
-          <img
-            src="./images/healthy-focused-guy-resting-running-treadmill-gym-body-healthy-healthy-man-resting-running-treadmill-373875042.webp"
-            alt="Image 2"
-          />
-        </div>
-        <div class="about-txt">
-          <h1>Why Choose Us?</h1>
-          <p>
-            Our diverse membership base creates a trendy and supportive
-            atmosphere, where you can make trends and stay motivated.
-          </p>
-          <br />
-          <p>Unlock your potential with our expert Personal Trainers.</p>
-          <br />
-          <p>Elevate Your fitness with practice sessions.</p>
-          <br />
-          <p>We provide Suppoertive management, for your fitness success.</p>
-          <div class="about-button">
-            <button class="discount-btn">Book A Free Class</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="classes">
-      <div class="classes">
-        <div class="class-txt">
-          <h1>Our <span>Classes</span></h1>
-        </div>
-        <div class="class-card">
-          <div class="class-content">
-            <img src="./images/physical fitness.jpg" alt="img" />
-            <h1>Physical Fitness</h1>
-          </div>
-          <div class="class-content">
-            <img src="./images/weight gain.jpg" alt="img" />
-            <h1>Weight Gain</h1>
-          </div>
-          <div class="class-content">
-            <img src="./images/strength trainning.jpg" alt="img" />
-            <h1>Strength Training</h1>
-          </div>
-          <div class="class-content">
-            <img src="./images/fat lose.jpg" alt="img" />
-            <h1>Fat Lose</h1>
-          </div>
-          <div class="class-content">
-            <img src="./images/weightlifting.jpg" alt="img" />
-            <h1>Weightlifting</h1>
-          </div>
-          <div class="class-content">
-            <img src="./images/running.jpg" alt="img" />
-            <h1>Running</h1>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="trainers">
-      <div class="trainers">
-        <div class="trainers-txt">
-          <h1 class="section-title"><span>Expert Trainers</span></h1>
-        </div>
-        <div class="trainer-card">
-          <div class="trainers-content">
-            <img src="./images/trainer1.jpg" alt="img" />
-            <span>Expert Trainer</span>
-            <p>John Doe</p>
-          </div>
-          <div class="trainers-content">
-            <img src="./images/trainer2.jpg" alt="img" />
-            <span>Expert Trainer</span>
-            <p>Mary White</p>
-          </div>
-          <div class="trainers-content">
-            <img src="./images/trainer3.jpg" alt="img" />
-            <span>Expert Trainer</span>
-            <p>Michael Doe</p>
-          </div>
-          <div class="trainers-content">
-            <img src="./images/trainer4.jpg" alt="img" />
-            <span>Expert Trainer</span>
-            <p>Anna White</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="join-us">
-      <div class="join-txt">
-        <span>Join Us Now</span>
-        <h1>GET UPTO 50% DISCOUNT</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda
-          qui dolore animi dolorem reiciendis earum quod saepe eveniet aliquam
-          voluptates.
-        </p>
-        <button class="discount-btn">Get Discount</button>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="Testimonials">
-      <div class="testimonials">
-        <div class="testimonial-txt">
-          <h1>Testimonials</h1>
-        </div>
-        <div class="testimonial-container">
-          <div class="card">
-            <img
-              src="https://randomuser.me/api/portraits/women/45.jpg"
-              alt="Profile"
-            />
-            <h3>Jessica Adams</h3>
-            <span>Member since 2023</span>
-            <p>
-              "Joining this gym was the best decision I ever made! I've lost
-              10kg in 4 months and feel stronger than ever."
-            </p>
-          </div>
-          <div class="card">
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="Profile"
-            />
-            <h3>David Miller</h3>
-            <span>Personal Trainer</span>
-            <p>
-              "I love training here! The equipment is top-notch and the
-              community is super motivating. Every session is powerful."
-            </p>
-          </div>
-          <div class="card">
-            <img
-              src="https://randomuser.me/api/portraits/women/65.jpg"
-              alt="Profile"
-            />
-            <h3>Sophia Green</h3>
-            <span>Fitness Enthusiast</span>
-            <p>
-              "The group classes are amazing! The energy, the coaches, and the
-              results keep me coming back every single week."
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="schedules">
-      <div class="schedules">
-        <h1>Schedules</h1>
-        <div class="schedule-card">
-          <div class="cards">
-            <span><i class="fa-solid fa-clock"></i>MONDAY - FRIDAY</span>
-            <h3>6:00 AM - 7:00 PM: OPEN GYM</h3>
-            <p>7:30 am - 8:30 am:Morning Running</p>
-            <p>6:00 pm - 7:00 pm:Strength Training</p>
-            <button>Know More</button>
-          </div>
-          <div class="card1">
-            <span><i class="fa-solid fa-clock"></i>SATURDAY</span>
-            <p>8:00 am - 12:00 pm:Open Gym</p>
-            <p>10:00 am - 11:00 am:Weekend Physical Training</p>
-            <hr />
-            <div class="card2">
-              <span><i class="fa-solid fa-clock"></i>SUNDAY</span>
-              <p>9:00 am - 11:00 am:Yoga and Relaxation</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="contact">
-        <div class="contact-txt">
-          <h1>GET STARTED WITH US</h1>
-          <p>CONNECT WITH US TODAY TO EMBARK ON YOUR FITNESS JOURNEY</p>
-        </div>
-        <div class="contact-form">
-          <input type="text" placeholder="Name" /><br />
-          <input type="email" placeholder="Email" /><br />
-          <input type="text" placeholder="Program" /><br />
-          <input type="text" placeholder="What Do You Want To Say?" />
-        </div>
-        <div class="contact-btn">
-          <button class="discount-btn">Submit</button>
-        </div>
-      </div>
-    </section>
-
-    <hr />
-    <footer class="footer">
-      <div class="foot">
-        <div class="footer-txt">
-          <h1 class="logo">FIT<span>LIFE</span></h1>
-          <p>BUILD Your Dream Physique</p>
-        </div>
-        <div class="footer-txt">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#trainers">Trainers</a></li>
-            <li><a href="#classes">Classes</a></li>
-          </ul>
-        </div>
-        <div class="footer-txt">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#schedules">Schedules</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="logos">
-        <span><i class="fa-brands fa-facebook"></i></span>
-        <span><i class="fa-brands fa-google"></i></span>
-        <span><i class="fa-brands fa-youtube"></i></span>
-        <span><i class="fa-brands fa-instagram"></i></span>
-        <span><i class="fa-brands fa-x-twitter"></i></span>
-      </div>
-      <div class="copy">
-        <span>&copy;Copyright All Right Reserved.</span>
-      </div>
-    </footer>
-
-    <!-- Floating Scroll to Top Button -->
-    <button class="floating-btn" onclick="scrollToTop()">
-      <i class="fa-solid fa-arrow-up"></i>
+  <!-- Header -->
+  <header class="header" id="header">
+    <a href="#home" class="logo"><h1>FIT<span>LIFE</span></h1></a>
+    <nav class="navigator" id="nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#classes" class="nav-link">Classes</a>
+      <a href="#trainers" class="nav-link">Trainers</a>
+      <a href="#schedules" class="nav-link">Schedules</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#contact" class="headerbutton">Join Us</a>
+    <button class="toggle" id="toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
+  </header>
 
-  </body>
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero reveal">
+      <span class="eyebrow">#1 Fitness Club</span>
+      <h1>BUILD Your <span class="grad">Dream</span> Physique</h1>
+      <div class="test">
+        <h2 id="typing"></h2><span class="cursor">|</span>
+      </div>
+      <p>Train smarter with elite coaches, modern equipment, and a community that pushes you forward — every single rep.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="discount-btn">Join Us</a>
+        <a href="#classes" class="ghost-btn">Explore Classes</a>
+      </div>
+      <div class="stats">
+        <div><strong data-count="1200">0</strong><span>Members</span></div>
+        <div><strong data-count="35">0</strong><span>Trainers</span></div>
+        <div><strong data-count="50">0</strong><span>Classes / wk</span></div>
+      </div>
+    </div>
+    <div class="heroimg reveal">
+      <div class="glow"></div>
+      <img src="./images/hero-img.png" alt="Athlete" />
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-us">
+      <div class="about-img reveal">
+        <img src="./images/healthy-focused-guy-resting-running-treadmill-gym-body-healthy-healthy-man-resting-running-treadmill-373875042.webp" alt="Athlete on treadmill" />
+      </div>
+      <div class="about-txt reveal">
+        <span class="eyebrow">About Us</span>
+        <h1>Why Choose <span class="grad">FitLife?</span></h1>
+        <ul class="features">
+          <li><i class="fa-solid fa-circle-check"></i> A supportive community that keeps you motivated.</li>
+          <li><i class="fa-solid fa-circle-check"></i> Unlock your potential with expert personal trainers.</li>
+          <li><i class="fa-solid fa-circle-check"></i> Elevate fitness with focused practice sessions.</li>
+          <li><i class="fa-solid fa-circle-check"></i> Supportive management for your fitness success.</li>
+        </ul>
+        <a href="#contact" class="discount-btn">Book A Free Class</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- CLASSES -->
+  <section id="classes">
+    <div class="classes">
+      <div class="class-txt reveal">
+        <span class="eyebrow">What we offer</span>
+        <h1>Our <span class="grad">Classes</span></h1>
+      </div>
+      <div class="class-card">
+        <div class="class-content reveal"><img src="./images/physical fitness.jpg" alt=""><h1>Physical Fitness</h1><p>Full-body conditioning</p></div>
+        <div class="class-content reveal"><img src="./images/weight gain.jpg" alt=""><h1>Weight Gain</h1><p>Hypertrophy programs</p></div>
+        <div class="class-content reveal"><img src="./images/strength trainning.jpg" alt=""><h1>Strength Training</h1><p>Build raw power</p></div>
+        <div class="class-content reveal"><img src="./images/fat lose.jpg" alt=""><h1>Fat Loss</h1><p>HIIT & cardio burn</p></div>
+        <div class="class-content reveal"><img src="./images/weightlifting.jpg" alt=""><h1>Weightlifting</h1><p>Olympic technique</p></div>
+        <div class="class-content reveal"><img src="./images/running.jpg" alt=""><h1>Running</h1><p>Endurance training</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS -->
+  <section id="trainers">
+    <div class="trainers">
+      <div class="trainers-txt reveal"><span>Expert Trainers</span></div>
+      <div class="trainer-card">
+        <div class="trainers-content reveal"><img src="./images/trainer1.jpg" alt=""><span>Strength Coach</span><p>John Doe</p></div>
+        <div class="trainers-content reveal"><img src="./images/trainer2.jpg" alt=""><span>Yoga Expert</span><p>Mary White</p></div>
+        <div class="trainers-content reveal"><img src="./images/trainer3.jpg" alt=""><span>HIIT Coach</span><p>Michael Doe</p></div>
+        <div class="trainers-content reveal"><img src="./images/trainer4.jpg" alt=""><span>Nutritionist</span><p>Anna White</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN US BANNER -->
+  <section class="join-us">
+    <div class="join-txt reveal">
+      <span>Join Us Now</span>
+      <h1>GET UP TO 50% DISCOUNT</h1>
+      <p>Limited-time offer for new members. Lock in your transformation today.</p>
+      <a href="#contact" class="discount-btn">Get Discount</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="Testimonials">
+    <div class="testimonials">
+      <div class="testimonial-txt reveal"><h1>Testimonials</h1></div>
+      <div class="testimonial-container">
+        <div class="card reveal">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
+          <h3>Jessica Adams</h3><span>Member since 2023</span>
+          <p>"Joining this gym was the best decision I ever made! I've lost 10kg in 4 months."</p>
+        </div>
+        <div class="card reveal">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+          <h3>David Miller</h3><span>Personal Trainer</span>
+          <p>"Top-notch equipment and a super motivating community. Every session is powerful."</p>
+        </div>
+        <div class="card reveal">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+          <h3>Sophia Green</h3><span>Fitness Enthusiast</span>
+          <p>"The group classes are amazing — energy, coaches, and results keep me coming back."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULES -->
+  <section id="schedules">
+    <div class="schedules">
+      <div class="reveal" style="text-align:center"><span class="eyebrow">Plan your week</span><h1>Schedules</h1></div>
+      <div class="schedule-card">
+        <div class="cards reveal">
+          <span><i class="fa-solid fa-clock"></i> MONDAY – FRIDAY</span>
+          <h3>6:00 AM – 7:00 PM · Open Gym</h3>
+          <p>7:30 am – 8:30 am · Morning Running</p>
+          <p>6:00 pm – 7:00 pm · Strength Training</p>
+          <a href="#contact" class="ghost-btn">Know More</a>
+        </div>
+        <div class="cards reveal">
+          <span><i class="fa-solid fa-clock"></i> SATURDAY</span>
+          <p>8:00 am – 12:00 pm · Open Gym</p>
+          <p>10:00 am – 11:00 am · Weekend Physical Training</p>
+          <hr/>
+          <span><i class="fa-solid fa-clock"></i> SUNDAY</span>
+          <p>9:00 am – 11:00 am · Yoga and Relaxation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact reveal">
+      <div class="contact-txt">
+        <span class="eyebrow">Contact</span>
+        <h1>GET STARTED WITH US</h1>
+        <p>Connect with us today to embark on your fitness journey.</p>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="program" placeholder="Program of interest" />
+        <textarea name="message" placeholder="What do you want to say?" rows="4"></textarea>
+        <button type="submit" class="discount-btn">Submit</button>
+        <p class="form-msg" id="formMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="foot">
+      <div class="footer-txt">
+        <h1 class="logo">FIT<span>LIFE</span></h1>
+        <p>Build your dream physique.</p>
+      </div>
+      <div class="footer-txt">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#trainers">Trainers</a></li>
+          <li><a href="#classes">Classes</a></li>
+        </ul>
+      </div>
+      <div class="footer-txt">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#schedules">Schedules</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="logos">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><i class="fa-brands fa-google"></i></a>
+    </div>
+    <p class="copyright">© <span id="year"></span> FitLife Gym. All rights reserved.</p>
+  </footer>
+
+  <a href="#home" class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <script src="script.js"></script>
+</body>
 </html>
